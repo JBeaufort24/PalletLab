@@ -1,1 +1,54 @@
+:root{
+  --background-1: #000000;
+  --background-2: #000000;
+  --background-3: #000000;
+  --background-4: #000000;
+  --background-5: #000000;
+  --background-6: #000000;
+  --background-7: #000000;
+  --background-8: #000000;
+  --background-9: #000000;
+  --background-10: #000000;
+  
+  --main-color-light: #111111;
+  --main-color-dark: whitesmoke;
+  --primiry-color-light: white;
+  --primary-color-dark: black;
+  --secondary-color-light: brown;
+  --secondary-color-dark: orange;
+  
+  --h1-title: font-size: clamp();
+  --h2-sub-title: font-size: clamp();
+  --h3-color-code: font-size: clamp();
+  --main-font-size: font-size: clamp();
+  --sub-font-size: font-size: clamp();
+}
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  scroll-behavior: smooth;
+}
+
+li{
+  list-style: none;
+}
+
+/*Navigation Bar*/
+nav{
+  display: flex;
+}
+
+/*Pallet box setup*/
+.pallet-section{
+  display: grid;
+  grid-template-columns: repeat(200px, 1fr);
+  gap: 10px;
+}
+
+article{
+  margin: 10px 20px;
+}
