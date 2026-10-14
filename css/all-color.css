@@ -1,9 +1,18 @@
-#active {
+#active{
   background: orangered;
-  border: 1px solid var(--main-color-dark);
 }
 
-#active:hover {
+#active:hover{
   background: var(--main-color-dark);
-  border: 1px solid orangered;
+  box-shadow: 1px 1px 1px orangered;
+}
+
+#color-id-red{
+  background: red;
+  border: 1px solid (--main-color-dark);
+}
+
+#color-id-red:hover{
+  background: var(--main-color-dark);
+  box-shadow: 1px 1px 1px red;
 }

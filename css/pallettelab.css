@@ -54,10 +54,11 @@ button{
   padding: 10px 15px;
   margin: 5px 0;
   border-radius: 10px;
+  border: none;
 }
 
 button:hover{
-  box-shadow: 1px 1px 1px black;
+  transform: translateY(-1px);
 }
 
 /*Pallet box setup*/
