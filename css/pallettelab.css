@@ -33,13 +33,31 @@ html, body{
   scroll-behavior: smooth;
 }
 
-li{
-  list-style: none;
+a{
+  text-decoration: none; /* Removes the underline */
+  color: inherit;        /* Removes the default link color and inherits the parent text color */
+}
+
+section{
+  border-bottom: 1px solid grey;
 }
 
 /*Navigation Bar*/
 nav{
+  padding: 0 5px;
   display: flex;
+  justify-content: space-between;
+}
+
+/*Navigation Buttons*/
+button{
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+button:hover{
+  box-shadow: 1px 1px 1px black;
 }
 
 /*Pallet box setup*/
@@ -51,4 +69,23 @@ nav{
 
 article{
   margin: 10px 20px;
+}
+
+/*Pallet Lab Codes and LInes*/
+.pallet-section{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.color-box{
+  max-width: 200px;
+  max-height: 100px;
+}
+
+.color-title{
+  font-size: var(--h1-title);
+}
+
+.color-code{
+  font-size: var(--h2-sub-title);
 }
