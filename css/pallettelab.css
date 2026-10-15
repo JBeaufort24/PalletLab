@@ -1,14 +1,16 @@
 :root{
-  --background-1: #000000;
-  --background-2: #000000;
-  --background-3: #000000;
-  --background-4: #000000;
-  --background-5: #000000;
-  --background-6: #000000;
-  --background-7: #000000;
-  --background-8: #000000;
-  --background-9: #000000;
-  --background-10: #000000;
+  --background-1: #e06d6d;
+  --background-2: #f4a261;
+  --background-3: #e9c46a;
+  --background-4: #81b29a;
+  --background-5: #64b5f6;
+  --background-6: #b197fc;
+  --background-7: #ffb57a;
+  --background-8: rgb(250, 250, 250);
+  --background-9: rgb(200, 200, 200);
+  --background-10: rgb(150, 150, 150);
+  --background-11: rgb(100, 100, 100);
+  --background-12: rgb(50, 50, 50);
   
   --main-color-light: #111111;
   --main-color-dark: whitesmoke;
