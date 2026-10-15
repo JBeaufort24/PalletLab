@@ -55,6 +55,9 @@ button{
   margin: 5px 0;
   border-radius: 10px;
   border: none;
+  position: relative;
+  overflow: hidden; /* Keeps the sliding background inside the element boundaries */
+  z-index: 1;
 }
 
 button:hover{
