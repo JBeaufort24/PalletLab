@@ -138,7 +138,6 @@ article{
 }
 
 :root{
-  --active: #e6f5f5;
   --red-color: #e06d6d;
   --orange-color: #f4a261;
   --yellow-color: #e9c46a;
@@ -149,30 +148,6 @@ article{
   --black-color: #2b2d42;
   --white-color: #f8f9fa;
   --grey-color: #adb5bd;
-}
-
-#active{
-  background: var(--main-color-dark);
-  box-shadow: 1px 2px var(--active);
-}
-
-#active::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--active);
-  transform: scaleX(0);
-  transform-origin: right; /* Determines which side it slides in from */
-  transition: transform 0.4s ease-out;
-  z-index: -1; /* Places the sliding background behind your text */
-}
-
-/* Triggers the slide on hover */
-#active:hover::after {
-  transform: scaleX(1);
 }
 
 #color-id-red{
