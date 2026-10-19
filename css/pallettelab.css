@@ -19,16 +19,22 @@
   --secondary-color-light: brown;
   --secondary-color-dark: orange;
   
-  --h1-title: font-size: clamp();
-  --h2-sub-title: font-size: clamp();
-  --h3-color-code: font-size: clamp();
-  --main-font-size: font-size: clamp();
-  --sub-font-size: font-size: clamp();
+  --h1-title: clamp(1.4em, 1.2vw, 2em);
+  --h2-sub-title: clamp(1.3em, 0.9vw, 1.9em);
+  --h3-color-code: clamp(1.1em, 0.4vw, 1.35em);
+  --main-font-size: clamp(0.95em, 0.25vw, 1.05em);
+  --sub-font-size: clamp(0.75em, 0.2vw, 0.875em);
+  
+  --border-rad: 20px;
 }
 
 *{
   margin: 0;
   padding: 0;
+}
+
+html {
+  color-scheme: dark light;
 }
 
 html, body{
@@ -44,54 +50,367 @@ section{
   border-bottom: 1px solid grey;
 }
 
+/*Header Section*/
+header{
+ text-align: center; 
+ margin: 20px 0 40px;
+}
+
+.palletlab-header{
+  font-size: clamp(2em, 2vw, 3em);
+}
+
+.pallet-lab{
+  font-size: clamp(2em, 3vw, 3em);
+}
+
 /*Navigation Bar*/
 nav{
-  padding: 0 5px;
+  padding: 10px 5px;
   display: flex;
   justify-content: space-between;
+  background-color: white;
+  margin: 0 20px;
+  border-radius: var(--border-rad);
 }
 
 /*Navigation Buttons*/
 button{
-  padding: 10px 15px;
+  padding: 15px 60px;
   margin: 5px 0;
-  border-radius: 10px;
+  border-radius: var(--border-rad);
   border: none;
   position: relative;
   overflow: hidden; /* Keeps the sliding background inside the element boundaries */
   z-index: 1;
+  font-size: var(--h3-color-code);
+  font-weight: 900;
 }
 
 button:hover{
   transform: translateY(-1px);
 }
 
+.nav-btn{
+  color: black;
+}
+
 /*Pallet box setup*/
 .pallet-section{
   display: grid;
-  grid-template-columns: repeat(200px, 1fr);
-  gap: 10px;
+  /* Automatically fits as many cards as possible per row. 
+     Each card will be at least 180px wide and up to a maximum of 250px wide. */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Centers cards on larger screens */
+  padding: 10px;
 }
 
 article{
   margin: 10px 20px;
 }
 
-/*Pallet Lab Codes and LInes*/
-.pallet-section{
-  display: flex;
-  justify-content: space-evenly;
+.color-box{
+  width: 250px;
+  height: 100px;
+  border-radius: var(--border-rad);
 }
 
-.color-box{
-  max-width: 200px;
-  max-height: 100px;
+.color-box:hover{
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 10px whitesmoke;
+  transition: transform 1s ease-in-out;
 }
 
 .color-title{
   font-size: var(--h1-title);
+  font-weight: 600;
 }
 
 .color-code{
   font-size: var(--h2-sub-title);
+  font-weight: 400;
+}
+
+.color-title, .color-code{
+  padding: 10px 40px;
+  
+}
+
+:root{
+  --active: #e6f5f5;
+  --red-color: #e06d6d;
+  --orange-color: #f4a261;
+  --yellow-color: #e9c46a;
+  --green-color: #81b29a;
+  --blue-color: #64b5f6;
+  --pink-color: #ffb5a7;
+  --purple-color: #b197fc; 
+  --black-color: #2b2d42;
+  --white-color: #f8f9fa;
+  --grey-color: #adb5bd;
+}
+
+#active{
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--active);
+}
+
+#active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--active);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#active:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-red{
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--red-color);
+}
+
+#color-id-red::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-red:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-orange{
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--orange-color);
+}
+
+#color-id-orange::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--orange-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-orange:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-yellow{
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--yellow-color);
+}
+
+#color-id-yellow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--yellow-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-yellow:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-green {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--green-color);
+}
+
+#color-id-green::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--green-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-green:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-blue {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--blue-color);
+}
+
+#color-id-blue::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--blue-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-blue:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-purple {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--purple-color);
+}
+
+#color-id-purple::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--purple-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-purple:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-pink {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--pink-color);
+}
+
+#color-id-pink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--pink-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-pink:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-black {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--black-color);
+}
+
+#color-id-black::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-black:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-white {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--white-color);
+}
+
+#color-id-white::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-white:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-grey {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--grey-color);
+}
+
+#color-id-grey::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--grey-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-grey:hover::after {
+  transform: scaleX(1);
 }
