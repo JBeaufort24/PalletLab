@@ -125,16 +125,17 @@ article{
 .color-title{
   font-size: var(--h1-title);
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .color-code{
   font-size: var(--h2-sub-title);
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .color-title, .color-code{
   padding: 10px 40px;
-  
 }
 
 :root{
@@ -366,26 +367,7 @@ article{
   transform: scaleX(1);
 }
 
-#color-id-grey {
-  background: var(--main-color-dark);
-  box-shadow: 1px 2px var(--grey-color);
-}
-
-#color-id-grey::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--grey-color);
-  transform: scaleX(0);
-  transform-origin: right; /* Determines which side it slides in from */
-  transition: transform 0.4s ease-out;
-  z-index: -1; /* Places the sliding background behind your text */
-}
-
-/* Triggers the slide on hover */
-#color-id-grey:hover::after {
-  transform: scaleX(1);
+/*Contrast Color*/
+.contrast-me{
+  color: contrast-color(white)
 }

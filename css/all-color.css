@@ -1,46 +1,51 @@
+/*All Reds*/
+#ruby-leaf{background: #8B0000;}
+#antique-ruby{background: #852736;}
+
 /*All Oranges*/
-#faded-orange{
-  background: #f89254;
-}
+#faded-orange{background: #f89254;}
+#burnt-nectar{background: #c2441c;}
+#maimi-peach{background: #ffb86b}
+
+/*All Yellows*/
+#desert-sand{background: #e2c99e;}
 
 /*All Greens*/
-#asparagus{
-  background: #8da249;
-}
+#asparagus{background: #8da249;}
+#moss-shadow{background: #274E13;}
+#neon-lime{background: #aaff00}
 
 /*All Blues*/
-#limed-spruce{
-  background: #2e434f ;
-}
+#neon-cyan{background: #00f5ff}
+#vice-cyan{background: #00f0ff}
+#dark-cyan{background: #008B8B}
+#chinese-blue{background: #414b9e;}
+#limed-spruce{background: #2e434f;}
+#light-luna{background: #a7ebf2;}
+#lite-luna{ background: #54acbf;}
+#medium-luna{background: #26658c;}
+#dark-luna{background: #023859;}
+#navy-luna{background: #011c40;}
+#regent-blue{background: #aad6e6;}
+#indigo-rain{background: #0d244d;}
 
-#light-luna{
-  background: #a7ebf2;
-  color: contrast-color(white);
-}
+/*All Purples*/
+#electric-purple{background: #9b5cff}
+#neon-purple{background: #8c6cff}
+#pearly-purple{background: #aa74a0;}
+#dusty-grape{background: #484d6d}
+#ceil{background: #9792cb;}
+#twilight-indigo{background: #2c365e}
+#midnight-violet{background: #2b193d}
 
-#lite-luna{
-  background: #54acbf;
-}
+/*All Pinks*/
+#sunset-pink{background: #ff5cab}
+#rosy-taupe{background: #c5979d;}
 
-#medium-luna{
-  background: #26658c;
-}
-
-#dark-luna{
-  background: #023859;
-}
-
-#navy-luna{
-  background: #011c40;
-}
-
-#regent-blue{
-  background: #aad6e6;
-  color: contrast-color(white);
-}
+/*All Blacks*/
+#ocean-night{background: #0b0f2b}
+#void{background: #000000}
+#dark-graphite{background: #141414}
 
 /*All Whites*/
-#navajo-white{
-  background: #fbe1b5;
-  color: contrast-color(white);
-}
+#navajo-white{background: #fbe1b5;}
