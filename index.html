@@ -4,9 +4,383 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/pallettelab.css">
-  <link rel="stylesheet" href="/css/all-color.css">
   <title>PaletteLab | Beaufort DigitalProductions</title>
+  
+  <style>
+    :root{
+  --background-1: #e06d6d;
+  --background-2: #f4a261;
+  --background-3: #e9c46a;
+  --background-4: #81b29a;
+  --background-5: #64b5f6;
+  --background-6: #b197fc;
+  --background-7: #ffb57a;
+  --background-8: rgb(250, 250, 250);
+  --background-9: rgb(200, 200, 200);
+  --background-10: rgb(150, 150, 150);
+  --background-11: rgb(100, 100, 100);
+  --background-12: rgb(50, 50, 50);
+  
+  --main-color-light: #111111;
+  --main-color-dark: whitesmoke;
+  --primiry-color-light: white;
+  --primary-color-dark: black;
+  --secondary-color-light: brown;
+  --secondary-color-dark: orange;
+  
+  --h1-title: clamp(1.4em, 1.2vw, 2em);
+  --h2-sub-title: clamp(1.3em, 0.9vw, 1.9em);
+  --h3-color-code: clamp(1.1em, 0.4vw, 1.35em);
+  --main-font-size: clamp(0.95em, 0.25vw, 1.05em);
+  --sub-font-size: clamp(0.75em, 0.2vw, 0.875em);
+  
+  --border-rad: 20px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+html, body{
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none; /* Removes the underline */
+  color: inherit;        /* Removes the default link color and inherits the parent text color */
+}
+
+section{
+  border-bottom: 1px solid grey;
+}
+
+/*Header Section*/
+header{
+ text-align: center; 
+ margin: 20px 0 40px;
+}
+
+.palletlab-header{
+  font-size: clamp(2em, 2vw, 3em);
+}
+
+.pallet-lab{
+  font-size: clamp(2em, 3vw, 3em);
+}
+
+/*Navigation Bar*/
+nav{
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 0 20px;
+  border-radius: var(--border-rad);
+}
+
+/*Navigation Buttons*/
+button{
+  padding: 15px 60px;
+  margin: 5px 0;
+  border-radius: var(--border-rad);
+  border: none;
+  position: relative;
+  overflow: hidden; /* Keeps the sliding background inside the element boundaries */
+  z-index: 1;
+  font-size: var(--h3-color-code);
+  font-weight: 900;
+}
+
+button:hover{
+  transform: translateY(-1px);
+}
+
+.nav-btn{
+  color: black;
+}
+
+/*Pallet box setup*/
+.pallet-section{
+  display: grid;
+  /* Automatically fits as many cards as possible per row. 
+     Each card will be at least 180px wide and up to a maximum of 250px wide. */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Centers cards on larger screens */
+  padding: 10px;
+}
+
+article{
+  margin: 10px 20px;
+}
+
+.color-box{
+  width: 250px;
+  height: 100px;
+  border-radius: var(--border-rad);
+}
+
+.color-box:hover{
+  transform: translateY(-2px);
+  box-shadow: 1px 1px 10px whitesmoke;
+  transition: transform 1s ease-in-out;
+}
+
+.color-title{
+  font-size: var(--h1-title);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.color-code{
+  font-size: var(--h2-sub-title);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.color-title, .color-code{
+  padding: 10px 40px;
+}
+
+:root{
+  --red-color: #e06d6d;
+  --orange-color: #f4a261;
+  --yellow-color: #e9c46a;
+  --green-color: #81b29a;
+  --blue-color: #64b5f6;
+  --pink-color: #ffb5a7;
+  --purple-color: #b197fc; 
+  --black-color: #2b2d42;
+  --white-color: #f8f9fa;
+  --grey-color: #adb5bd;
+}
+
+#color-id-red{
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--red-color);
+}
+
+#color-id-red::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-red:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-orange{
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--orange-color);
+}
+
+#color-id-orange::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--orange-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-orange:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-yellow{
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--yellow-color);
+}
+
+#color-id-yellow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--yellow-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-yellow:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-green {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--green-color);
+}
+
+#color-id-green::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--green-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-green:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-blue {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--blue-color);
+}
+
+#color-id-blue::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--blue-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-blue:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-purple {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--purple-color);
+}
+
+#color-id-purple::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--purple-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-purple:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-pink {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--pink-color);
+}
+
+#color-id-pink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--pink-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-pink:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-black {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--black-color);
+}
+
+#color-id-black::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-black:hover::after {
+  transform: scaleX(1);
+}
+
+#color-id-white {
+  background: var(--main-color-dark);
+  box-shadow: 1px 2px var(--white-color);
+}
+
+#color-id-white::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white-color);
+  transform: scaleX(0);
+  transform-origin: right; /* Determines which side it slides in from */
+  transition: transform 0.4s ease-out;
+  z-index: -1; /* Places the sliding background behind your text */
+}
+
+/* Triggers the slide on hover */
+#color-id-white:hover::after {
+  transform: scaleX(1);
+}
+
+/*Contrast Color*/
+.contrast-me{
+  color: contrast-color(white)
+}
+  </style>
 </head>
 
 <body>
@@ -47,14 +421,14 @@
   <main class="pallet-main">
     <section class="pallet-section" id="red">
       <article>
-        <div class="color-box" id="antique-ruby">
+        <div class="color-box" id="antique-ruby" style="background: #852736">
           <h2 class="color-title">Antique Ruby</h2>
           <h3 class="color-code">#852736</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="ruby-leaf">
+        <div class="color-box" id="ruby-leaf" style="background: #8B0000">
           <h2 class="color-title">Ruby Leaf</h2>
           <h3 class="color-code">#8B0000</h3>
         </div>
@@ -63,21 +437,21 @@
     
     <section class="pallet-section" id="orange">
        <article>
-        <div class="color-box" id="maimi-peach">
+        <div class="color-box" id="maimi-peach" style="background: #ffb86b">
           <h2 class="color-title">miami peach</h2>
           <h3 class="color-code">#ffb86b</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="burnt-nectar">
+        <div class="color-box" id="burnt-nectar" style="background: #c2441c">
           <h2 class="color-title">Burnt Nectar</h2>
           <h3 class="color-code">#c2441c</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="faded-orange">
+        <div class="color-box" id="faded-orange" style="background: #f89254">
           <h2 class="color-title">Faded Orange</h2>
           <h3 class="color-code">#f89254</h3>
         </div>
@@ -86,7 +460,7 @@
     
     <section class="pallet-section" id="yellow">
       <article>
-        <div class="color-box" id="desert-sand">
+        <div class="color-box" id="desert-sand" style="background: #e2c99e">
           <h2 class="color-title">Desert Sand</h2>
           <h3 class="color-code">#e2c99e</h3>
         </div>
@@ -95,21 +469,21 @@
     
     <section class="pallet-section" id="green">
       <article>
-        <div class="color-box" id="neon-lime">
+        <div class="color-box" id="neon-lime" style="background: #aaff00">
           <h2 class="color-title contrast-me">neon lime</h2>
           <h3 class="color-code contrast-me">#aaff00</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="moss-shadow">
+        <div class="color-box" id="moss-shadow" style="background: #274E13">
           <h2 class="color-title">Moss Shadow</h2>
           <h3 class="color-code">#aa542b</h3>
         </div>
       </article>
       
       <article>
-        <div class="color-box" id="asparagus">
+        <div class="color-box" id="asparagus" style="background: #8da249">
           <h2 class="color-title">Asparagus</h2>
           <h3 class="color-code">#8da249</h3>
         </div>
@@ -119,79 +493,79 @@
     
     <section class="pallet-section" id="blue">
        <article>
-        <div class="color-box" id="neon-cyan">
+        <div class="color-box" id="neon-cyan" style="background: #00f5ff">
           <h2 class="color-title">neon cyan</h2>
           <h3 class="color-code">#00f5ff</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="vice-cyan">
+        <div class="color-box" id="vice-cyan" style ="background: #00f0ff">
           <h2 class="color-title">vice cyan</h2>
           <h3 class="color-code">#00f0ff</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="dark-cyan">
+        <div class="color-box" id="dark-cyan" style="background: #008B8B">
           <h2 class="color-title">dark cyan</h2>
           <h3 class="color-code">#008B8B</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="chinese-blue">
+        <div class="color-box" id="chinese-blue" style="background: #414b9e">
           <h2 class="color-title">Chinese Blue</h2>
           <h3 class="color-code">#414b9e</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="indigo-rain">
+        <div class="color-box" id="indigo-rain" style="background: #0d244d">
           <h2 class="color-title">Indigo Rain</h2>
           <h3 class="color-code">#od244d</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="limed-spruce">
+        <div class="color-box" id="limed-spruce" style="background: #2e434f">
           <h2 class="color-title">Limed Spruce</h2>
           <h3 class="color-code">#2e434f</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="light-luna">
+        <div class="color-box" id="light-luna" style="background: #a7ebf2">
           <h2 class="color-title contrast-me">Light Luna</h2>
           <h3 class="color-code contrast-me">#a7ebf2</h3>
         </div>
       </article>
       <article>
-        <div class="color-box" id="lite-luna">
+        <div class="color-box" id="lite-luna" style="background: #54acbf">
           <h2 class="color-title">Light Luna</h2>
           <h3 class="color-code">#54acbf</h3>
         </div>
       </article>
       <article>
-        <div class="color-box" id="medium-luna">
+        <div class="color-box" id="medium-luna" style="background: #26658c">
           <h2 class="color-title">Medium Luna</h2>
           <h3 class="color-code">#26658c</h3>
         </div>
       </article>
       <article>
-        <div class="color-box" id="dark-luna">
+        <div class="color-box" id="dark-luna" style="background: #023859">
           <h2 class="color-title">Dark Luna</h2>
           <h3 class="color-code">#023859</h3>
         </div>
       </article>
       <article>
-        <div class="color-box" id="navy-luna">
+        <div class="color-box" id="navy-luna" style="background: #011c40">
           <h2 class="color-title">Navy Luna</h2>
           <h3 class="color-code">#011c40</h3>
         </div>
       </article>
       <article>
-        <div class="color-box" id="regent-blue">
+        <div class="color-box" id="regent-blue" style="background: #aad6e6">
           <h2 class="color-title contrast-me">Regent Blue</h2>
           <h3 class="color-code contrast-me">#aad6e6</h3>
         </div>
@@ -202,49 +576,49 @@
     
     <section class="pallet-section" id="purple">
       <article>
-        <div class="color-box" id="electric-purple">
+        <div class="color-box" id="electric-purple" sttyle="background: #9b5cff">
           <h2 class="color-title">electric purple</h2>
           <h3 class="color-code">#9b5cff</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="neon-purple">
+        <div class="color-box" id="neon-purple" style="background: #8c6cff">
           <h2 class="color-title">Neon purple</h2>
           <h3 class="color-code">#8c6cff</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="midnight-violet">
+        <div class="color-box" id="midnight-violet" style="background: #2b193d">
           <h2 class="color-title">midnight violet</h2>
           <h3 class="color-code">#2b193d</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="twilight-indigo">
+        <div class="color-box" id="twilight-indigo" style="background: #2c365e">
           <h2 class="color-title">twilight indigo</h2>
           <h3 class="color-code">#2c365e</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="ceil">
+        <div class="color-box" id="ceil" style="background: #9792cb">
           <h2 class="color-title">Ceil</h2>
           <h3 class="color-code">#9792cb</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="dusty-grape">
+        <div class="color-box" id="dusty-grape" style="background: #484d6d">
           <h2 class="color-title">dusty grape</h2>
           <h3 class="color-code">#484d6d</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="pearly-purple">
+        <div class="color-box" id="pearly-purple" style="background: #aa74a0">
           <h2 class="color-title">Pearly Purple</h2>
           <h3 class="color-code">#aa74a0</h3>
         </div>
@@ -253,14 +627,14 @@
     
     <section class="pallet-section" id="pink">
        <article>
-        <div class="color-box" id="sunset-pink">
+        <div class="color-box" id="sunset-pink" style="background: #ff5cab">
           <h2 class="color-title">Sunset Pink</h2>
           <h3 class="color-code">#ff5cab</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="rosy-taupe">
+        <div class="color-box" id="rosy-taupe" style="background: #c5979d">
           <h2 class="color-title">Rosy Taupe</h2>
           <h3 class="color-code">#c5979d</h3>
         </div>
@@ -269,21 +643,21 @@
     
     <section class="pallet-section" id="black">
       <article>
-        <div class="color-box" id="dark-graphite">
+        <div class="color-box" id="dark-graphite" style="background: #141414">
           <h2 class="color-title">dark graphite</h2>
           <h3 class="color-code">#141414</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="void">
+        <div class="color-box" id="void" style="background: #000000">
           <h2 class="color-title">void</h2>
           <h3 class="color-code">#000000</h3>
         </div>
       </article>
 
       <article>
-        <div class="color-box" id="ocean-night">
+        <div class="color-box" id="ocean-night" style="background: #0b0f2b">
           <h2 class="color-title">Ocean night</h2>
           <h3 class="color-code">#0b0f2b</h3>
         </div>
@@ -292,7 +666,7 @@
     
     <section class="pallet-section" id="white">
       <article>
-        <div class="color-box" id="navajo-white">
+        <div class="color-box" id="navajo-white" style="background: #fbe1b5">
           <h2 class="color-title contrast-me">Navajo White</h2>
           <h3 class="color-code contrast-me">#fbe1b5</h3>
         </div>
