@@ -21,6 +21,17 @@
   --background-11: rgb(100, 100, 100);
   --background-12: rgb(50, 50, 50);
   
+  --red-color: #e06d6d;
+  --orange-color: #f4a261;
+  --yellow-color: #e9c46a;
+  --green-color: #81b29a;
+  --blue-color: #64b5f6;
+  --pink-color: #ffb5a7;
+  --purple-color: #b197fc; 
+  --black-color: #2b2d42;
+  --white-color: #f8f9fa;
+  --grey-color: #adb5bd;
+  
   --main-color-light: #111111;
   --main-color-dark: whitesmoke;
   --primiry-color-light: white;
@@ -48,6 +59,11 @@ html {
 
 html, body{
   scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1e293b 0%, #0d244d 50%, #0f172a 100%);
 }
 
 a{
@@ -121,7 +137,7 @@ article{
 
 .color-box{
   width: 250px;
-  height: 100px;
+  height: auto;
   border-radius: var(--border-rad);
 }
 
@@ -147,18 +163,32 @@ article{
   padding: 10px 40px;
 }
 
-:root{
-  --red-color: #e06d6d;
-  --orange-color: #f4a261;
-  --yellow-color: #e9c46a;
-  --green-color: #81b29a;
-  --blue-color: #64b5f6;
-  --pink-color: #ffb5a7;
-  --purple-color: #b197fc; 
-  --black-color: #2b2d42;
-  --white-color: #f8f9fa;
-  --grey-color: #adb5bd;
+.search-section {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
+
+.search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--accent-color);
+}
+
+:root{
+  }
 
 #color-id-red{
   background: var(--main-color-dark);
@@ -380,6 +410,26 @@ article{
 .contrast-me{
   color: contrast-color(white)
 }
+
+/* Media query targeting mobile devices and small screens */
+@media screen and (max-width: 600px) {
+  .palletlab-header {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+
+  /* Adjust layout grids or containers for smaller screens */
+  .container,
+  .palette-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  button{
+    width: 100%;
+  }
+}
+
   </style>
 </head>
 
@@ -436,6 +486,13 @@ article{
     </section>
     
     <section class="pallet-section" id="orange">
+      <article>
+        <div class="color-box" id="hazelnut-kisses" style="background: #77281a">
+          <h2 class="color-title contrast-me">hazelbut kisses</h2>
+          <h3 class="color-code contrast-me">#77281a</h3>
+        </div>
+      </article>
+
        <article>
         <div class="color-box" id="maimi-peach" style="background: #ffb86b">
           <h2 class="color-title">miami peach</h2>
@@ -468,6 +525,20 @@ article{
     </section>
     
     <section class="pallet-section" id="green">
+      <article>
+        <div class="color-box" id="aquamarine" style="background: #2fdfb3">
+          <h2 class="color-title contrast-me">aquamarine</h2>
+          <h3 class="color-code contrast-me">#2fdfb3</h3>
+        </div>
+      </article>
+
+      <article>
+        <div class="color-box" id="zucchini" style="background: #134234">
+          <h2 class="color-title contrast-me">zucchini</h2>
+          <h3 class="color-code contrast-me">#134234</h3>
+        </div>
+      </article>
+
       <article>
         <div class="color-box" id="neon-lime" style="background: #aaff00">
           <h2 class="color-title contrast-me">neon lime</h2>
@@ -576,7 +647,7 @@ article{
     
     <section class="pallet-section" id="purple">
       <article>
-        <div class="color-box" id="electric-purple" sttyle="background: #9b5cff">
+        <div class="color-box" id="electric-purple" style="background: #9b5cff">
           <h2 class="color-title">electric purple</h2>
           <h3 class="color-code">#9b5cff</h3>
         </div>
@@ -626,6 +697,20 @@ article{
     </section>
     
     <section class="pallet-section" id="pink">
+      <article>
+        <div class="color-box" id="pink-charge" style="background: #d66cb9">
+          <h2 class="color-title contrast-me">Pink Charge</h2>
+          <h3 class="color-code contrast-me">#d66cb9</h3>
+        </div>
+      </article>
+
+      <article>
+        <div class="color-box" id="magnetos-magenta" style="background: #B01998">
+          <h2 class="color-title contrast-me">Magneto's Magente</h2>
+          <h3 class="color-code contrast-me">#b01998</h3>
+        </div>
+      </article>
+
        <article>
         <div class="color-box" id="sunset-pink" style="background: #ff5cab">
           <h2 class="color-title">Sunset Pink</h2>
@@ -676,7 +761,6 @@ article{
   
   <footer class = "pallet-footer"></footer>
   
-  <script src="/javascript/filter-section.js"></script>
-</body>
+  </body>
 
 </html>
