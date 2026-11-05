@@ -400,7 +400,19 @@ article{
     width: 100%;
   }
   
+  .pallet-section{
+  grid-template-columns: repeat(auto-fit, minmax(350px, 100%));
+  gap: 5px; /* Space between cards */
+  justify-content: center; /* Centers cards on larger screens */
+  padding: 5px;
+  }
   
+  .color-box {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-rad);
+  text-align: center;
+  }
 }
 
   </style>
@@ -577,8 +589,8 @@ article{
 
       <article>
         <div class="color-box" id="shy-green" style="background: #e6e9db">
-          <h2 class="color-title">shy green</h2>
-          <h3 class="color-code">#e6e9db</h3>
+          <h2 class="color-title contrast-me">shy green</h2>
+          <h3 class="color-code contrast-me">#e6e9db</h3>
         </div>
       </article>
 
