@@ -89,6 +89,10 @@ a{
   color: inherit;        /* Removes the default link color and inherits the parent text color */
 }
 
+section{
+  margin: 10px 0;
+}
+
 /*Header Section*/
 header{
  text-align: center; 
@@ -687,18 +691,13 @@ article{
 
 /* Media query targeting mobile devices and small screens */
 @media screen and (max-width: 600px) {
-  *{
-    padding: 0 10px;
-  }
+  section {
+  margin: 50px 0;
+}
   
   .palletlab-header {
     font-size: 1.8rem;
     padding: 1rem;
-  }
-
-  /* Adjust layout grids or containers for smaller screens */
-  .palette-section {
-    grid-template-columns: 1fr;
   }
   
   button{
@@ -717,6 +716,10 @@ article{
   height: auto;
   border-radius: var(--border-rad);
   text-align: center;
+  }
+  
+  .color-pallets{
+    margin: 0 10%;
   }
 
 nav {
@@ -738,7 +741,6 @@ nav {
   .nav-lists{
     padding: 0;
     margin: 0;
-    
   }
 }
 
