@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PaletteLab | Beaufort DigitalProductions</title>
-  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root{
   --background-1: #e06d6d;
@@ -46,11 +49,24 @@
   --sub-font-size: clamp(0.75em, 0.2vw, 0.875em);
   
   --border-rad: 20px;
+  
+  --bg-dark: #0f172a;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --danger-color: #ef4444;
+  --radius: 12px;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 *{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 html {
@@ -64,6 +80,11 @@ html, body{
 body {
   min-height: 100vh;
   background: radial-gradient(circle at center, #1e293b 0%, #0d244d 50%, #0f172a 100%);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 a{
@@ -81,6 +102,252 @@ header{
  margin: 20px 0 40px;
 }
 
+header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Controls Header */
+.controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+}
+
+.controls-bar h2 {
+  font-size: 1.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Palette Grid */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  min-height: 320px;
+}
+
+.color-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.color-card:hover {
+  transform: translateY(-4px);
+}
+
+.color-display {
+  flex: 1;
+  min-height: 180px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0.75rem;
+  position: relative;
+}
+
+.icon-btn {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.color-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--card-bg);
+}
+
+.code-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.code-box:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.code-label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Converter Section */
+.converter-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.converter-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.75rem;
+}
+
+.converter-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .converter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-family: monospace;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--accent-color);
+}
+
+.error-msg {
+  color: var(--danger-color);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  min-height: 1rem;
+}
+
+.preview-box {
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: monospace;
+  transition: background-color 0.2s ease;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
 .palletlab-header{
   font-size: clamp(2em, 2vw, 3em);
 }
@@ -95,7 +362,7 @@ nav{
   display: flex;
   justify-content: space-between;
   background-color: white;
-  margin: 0 20px;
+  margin: 0 ;
   border-radius: var(--border-rad);
 }
 
@@ -118,6 +385,8 @@ button:hover{
 
 .nav-btn{
   color: black;
+  padding: 10px;
+  margin: 5px 0;
 }
 
 /*Pallet box setup*/
@@ -162,6 +431,42 @@ article{
 .color-title, .color-code{
   padding: 10px 40px;
 }
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #3b82f6; /* Accent color */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+  opacity: 0; /* Hidden by default */
+  pointer-events: none;
+  z-index: 999;
+}
+
+#scrollToTopBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #2563eb;
+  transform: translateY(-3px);
+}
+
+#scrollToTopBtn:active {
+  transform: translateY(0);
+}
+
 
 #color-id-red{
   background: var(--main-color-dark);
@@ -454,11 +759,69 @@ article{
   </nav>
   
   <main class="pallet-main">
-    <section class="pallet-section" id="red">
+    <article class="color-pallette-converter">
+      <!-- Palette Generator Section -->
+    <section>
+      <div class="controls-bar">
+        <h2>Palette Generator</h2>
+        <button class="btn" id="generate-btn">
+          <i data-lucide="refresh-cw"></i> Generate (Space)
+        </button>
+      </div>
+
+      <div class="palette-grid" id="palette-grid" style="margin-top: 1rem;">
+        <!-- Swatches rendered via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Converter Section -->
+    <section class="converter-card">
+      <h2>Color Code Converter</h2>
+      
+      <div class="converter-grid">
+        <div>
+          <!-- HEX to RGB -->
+          <div class="input-group" style="margin-bottom: 1.5rem;">
+            <label for="hex-input">HEX Code</label>
+            <div class="input-wrapper">
+              <input type="text" id="hex-input" placeholder="#3B82F6" maxlength="7">
+            </div>
+            <div class="error-msg" id="hex-error"></div>
+          </div>
+
+          <!-- RGB to HEX -->
+          <div class="input-group">
+            <label for="rgb-input">RGB Code</label>
+            <div class="input-wrapper">
+              <input type="text" id="rgb-input" placeholder="rgb(59, 130, 246)">
+            </div>
+            <div class="error-msg" id="rgb-error"></div>
+          </div>
+        </div>
+
+        <!-- Live Preview Box -->
+        <div class="input-group">
+          <label>Live Preview</label>
+          <div class="preview-box" id="converter-preview">
+            <span id="preview-text">#3B82F6</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast Element -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+    </article>
+    
+    <article class="color-pallets">
+      <section class="pallet-section" id="red">
       <article>
         <div class="color-box" id="crimson-fleet" style="background: #b72b3c">
           <h2 class="color-title">crimson fleet</h2>
-          <h3 class="color-code">#b72b3c</h3>
+          <p class="color-code">#b72b3c</p>
         </div>
       </article>
 
@@ -966,9 +1329,244 @@ article{
         </div>
       </article>
     </section>
+
+    </article>
+    
+    <button id="scrollToTopBtn" aria-label="Scroll to navbar">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 15-6-6-6 6"/>
+  </svg>
+</button>
+
   </main>
   
   <footer class = "pallet-footer"></footer>
+  
+  <script>
+  // App State
+  let colors = [];
+  const PALETTE_SIZE = 5;
+  
+  // Helper Functions
+  function getRandomHex() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
+  function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) {
+      hex = hex.split('').map(char => char + char).join('');
+    }
+    if (hex.length !== 6) return null;
+    
+    const num = parseInt(hex, 16);
+    return {
+      r: (num >> 16) & 255,
+      g: (num >> 8) & 255,
+      b: 255 & num
+    };
+  }
+  
+  function rgbToHex(r, g, b) {
+    const toHex = (n) => {
+      const hex = Math.max(0, Math.min(255, n)).toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
+  }
+  
+  function getContrastColor(hex) {
+    const rgb = hexToRgb(hex);
+    if (!rgb) return '#FFFFFF';
+    const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+    return brightness > 128 ? '#000000' : '#FFFFFF';
+  }
+  
+  function showToast(text) {
+    const toast = document.getElementById('toast');
+    toast.textContent = text;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2000);
+  }
+  
+  // Palette Logic
+  function initializePalette() {
+    colors = Array.from({ length: PALETTE_SIZE }, () => ({
+      hex: getRandomHex(),
+      locked: false
+    }));
+    renderPalette();
+  }
+  
+  function generatePalette() {
+    colors = colors.map(color => {
+      if (color.locked) return color;
+      return { ...color, hex: getRandomHex() };
+    });
+    renderPalette();
+  }
+  
+  function toggleLock(index) {
+    colors[index].locked = !colors[index].locked;
+    renderPalette();
+  }
+  
+  function renderPalette() {
+    const grid = document.getElementById('palette-grid');
+    grid.innerHTML = '';
+    
+    colors.forEach((colorObj, index) => {
+      const rgb = hexToRgb(colorObj.hex);
+      const rgbString = rgb ? `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` : '';
+      
+      const card = document.createElement('div');
+      card.className = 'color-card';
+      
+      card.innerHTML = `
+          <div class="color-display" style="background-color: ${colorObj.hex};">
+            <button class="icon-btn" onclick="toggleLock(${index})" aria-label="Lock color">
+              <i data-lucide="${colorObj.locked ? 'lock' : 'unlock'}"></i>
+            </button>
+          </div>
+          <div class="color-info">
+            <div class="code-box" onclick="copyText('${colorObj.hex}', 'HEX')">
+              <div>
+                <div class="code-label">HEX</div>
+                <div>${colorObj.hex}</div>
+              </div>
+              <i data-lucide="copy" style="width: 14px; height: 14px; opacity: 0.6;"></i>
+            </div>
+            <div class="code-box" onclick="copyText('${rgbString}', 'RGB')">
+              <div>
+                <div class="code-label">RGB</div>
+                <div>${rgbString}</div>
+              </div>
+              <i data-lucide="copy" style="width: 14px; height: 14px; opacity: 0.6;"></i>
+            </div>
+          </div>
+        `;
+      
+      grid.appendChild(card);
+    });
+    
+    lucide.createIcons();
+  }
+  
+  function copyText(text, label) {
+    navigator.clipboard.writeText(text);
+    showToast(`Copied ${label}: ${text}`);
+  }
+  
+  // Converter Logic
+  const hexInput = document.getElementById('hex-input');
+  const rgbInput = document.getElementById('rgb-input');
+  const hexError = document.getElementById('hex-error');
+  const rgbError = document.getElementById('rgb-error');
+  const previewBox = document.getElementById('converter-preview');
+  const previewText = document.getElementById('preview-text');
+  
+  function updatePreview(hex) {
+    previewBox.style.backgroundColor = hex;
+    previewText.textContent = hex;
+    previewText.style.color = getContrastColor(hex);
+  }
+  
+  hexInput.addEventListener('input', (e) => {
+    let value = e.target.value.trim();
+    if (!value.startsWith('#') && value.length > 0) {
+      value = '#' + value;
+    }
+    
+    const cleanHex = value.replace(/[^#0-9A-Fa-f]/g, '');
+    hexInput.value = cleanHex;
+    
+    const rgb = hexToRgb(cleanHex);
+    if (rgb) {
+      hexError.textContent = '';
+      rgbError.textContent = '';
+      const rgbStr = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+      rgbInput.value = rgbStr;
+      updatePreview(cleanHex.toUpperCase());
+    } else {
+      if (cleanHex.length > 1) {
+        hexError.textContent = 'Invalid HEX code (e.g., #3B82F6)';
+      } else {
+        hexError.textContent = '';
+      }
+    }
+  });
+  
+  rgbInput.addEventListener('input', (e) => {
+    const value = e.target.value.trim();
+    const match = value.match(/^rgba?\(?\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/i);
+    
+    if (match) {
+      const r = parseInt(match[1]);
+      const g = parseInt(match[2]);
+      const b = parseInt(match[3]);
+      
+      if (r <= 255 && g <= 255 && b <= 255) {
+        rgbError.textContent = '';
+        hexError.textContent = '';
+        const hex = rgbToHex(r, g, b);
+        hexInput.value = hex;
+        updatePreview(hex);
+      } else {
+        rgbError.textContent = 'RGB values must be between 0 and 255';
+      }
+    } else {
+      if (value.length > 3) {
+        rgbError.textContent = 'Invalid RGB format (e.g., 59, 130, 246)';
+      } else {
+        rgbError.textContent = '';
+      }
+    }
+  });
+  
+  // Event Listeners
+  document.getElementById('generate-btn').addEventListener('click', generatePalette);
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && e.target.tagName !== 'INPUT') {
+      e.preventDefault();
+      generatePalette();
+    }
+  });
+  
+  // Initialize
+  initializePalette();
+  updatePreview('#3B82F6');
+  
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+// Target your navbar (change 'header' or 'navbar' to your header's actual ID)
+const navBar = document.querySelector('nav') || document.querySelector('header');
+
+// Show button when scrolled down 200px
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    scrollToTopBtn.classList.add('visible');
+  } else {
+    scrollToTopBtn.classList.remove('visible');
+  }
+});
+
+// Smooth scroll to top when clicked
+scrollToTopBtn.addEventListener('click', () => {
+  if (navBar) {
+    navBar.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+</script>
   
   </body>
 
