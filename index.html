@@ -719,26 +719,27 @@ article{
   border-radius: var(--border-rad);
   text-align: center;
   }
-  
-  nav {
+
+nav {
   display: block;
-  margin: 0;
-  margin-top: 10px;
-  flex-direction: column;
-  }
-  
-  .nav-btn, #color-id-red {
+  background-color: white;
+  border-radius: var(--border-rad);
+  padding: 0 50px;
+  margin: 0 auto;
+  /* Centers it evenly and removes the awkward left offset */
+  width: 90vw;
+}
+
+  .nav-btn {
     padding: 5px 0;
-    margin: 0;
+    margin: 10px -10px;
+    width: 100%;  
   }
   
   .nav-lists{
-    padding: 5px 0;
-    margin: 10px;
-  }
-  
-  #color-id-red{
-    margin-left: -10px;
+    padding: 0;
+    margin: 0;
+    
   }
 }
 
