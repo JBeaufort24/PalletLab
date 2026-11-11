@@ -89,10 +89,6 @@ a{
   color: inherit;        /* Removes the default link color and inherits the parent text color */
 }
 
-section{
-  border-bottom: 1px solid grey;
-}
-
 /*Header Section*/
 header{
  text-align: center; 
@@ -392,11 +388,11 @@ button:hover{
   display: grid;
   /* Automatically fits as many cards as possible per row. 
      Each card will be at least 180px wide and up to a maximum of 250px wide. */
-  grid-template-columns: repeat(auto-fit, minmax(50px, 150px));
+  grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
   gap: 10px;
   justify-content: center; /* Centers cards on larger screens */
   padding: 10px;
-  max-width: 90vw;
+  max-width: 80vw;
 }
 
 article{
