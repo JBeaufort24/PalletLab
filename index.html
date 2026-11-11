@@ -81,11 +81,7 @@ body {
   min-height: 100vh;
   background: radial-gradient(circle at center, #1e293b 0%, #0d244d 50%, #0f172a 100%);
   color: var(--text-main);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-}
+  }
 
 a{
   text-decoration: none; /* Removes the underline */
@@ -165,7 +161,7 @@ header p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
-  min-height: 320px;
+  min-height: 420px;
 }
 
 .color-card {
@@ -185,7 +181,7 @@ header p {
 
 .color-display {
   flex: 1;
-  min-height: 180px;
+  min-height: 150px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -254,7 +250,7 @@ header p {
 
 .converter-card h2 {
   font-size: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: .5rem;
   border-bottom: 1px solid var(--card-border);
   padding-bottom: 0.75rem;
 }
@@ -262,7 +258,7 @@ header p {
 .converter-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -292,7 +288,7 @@ header p {
   padding: 0.75rem 1rem;
   background-color: var(--bg-dark);
   border: 1px solid var(--card-border);
-  border-radius: 8px;
+  border-radius: var(--border-rad);
   color: var(--text-main);
   font-family: monospace;
   font-size: 1rem;
@@ -314,7 +310,7 @@ header p {
 .preview-box {
   width: 100%;
   height: 100%;
-  min-height: 120px;
+  height: 180px;
   border-radius: 8px;
   border: 1px solid var(--card-border);
   display: flex;
@@ -358,12 +354,11 @@ header p {
 
 /*Navigation Bar*/
 nav{
-  padding: 10px 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: white;
-  margin: 0 ;
   border-radius: var(--border-rad);
+  margin: 0 20px;
 }
 
 /*Navigation Buttons*/
@@ -385,8 +380,8 @@ button:hover{
 
 .nav-btn{
   color: black;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 10px 30px;
+  margin: 10px 0;
 }
 
 /*Pallet box setup*/
@@ -394,20 +389,22 @@ button:hover{
   display: grid;
   /* Automatically fits as many cards as possible per row. 
      Each card will be at least 180px wide and up to a maximum of 250px wide. */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
-  gap: 20px; /* Space between cards */
+  grid-template-columns: repeat(auto-fit, minmax(50px, 150px));
+  gap: 10px;
   justify-content: center; /* Centers cards on larger screens */
   padding: 10px;
+  max-width: 90vw;
 }
 
 article{
-  margin: 10px 20px;
+  margin: 5px 0;
 }
 
 .color-box{
-  width: 250px;
-  height: auto;
+  width: 300px;
+  height: 150px;
   border-radius: var(--border-rad);
+  text-align: center;
 }
 
 .color-box:hover{
@@ -691,6 +688,10 @@ article{
 
 /* Media query targeting mobile devices and small screens */
 @media screen and (max-width: 600px) {
+  *{
+    padding: 0 10px;
+  }
+  
   .palletlab-header {
     font-size: 1.8rem;
     padding: 1rem;
@@ -717,6 +718,27 @@ article{
   height: auto;
   border-radius: var(--border-rad);
   text-align: center;
+  }
+  
+  nav {
+  display: block;
+  margin: 0;
+  margin-top: 10px;
+  flex-direction: column;
+  }
+  
+  .nav-btn, #color-id-red {
+    padding: 5px 0;
+    margin: 0;
+  }
+  
+  .nav-lists{
+    padding: 5px 0;
+    margin: 10px;
+  }
+  
+  #color-id-red{
+    margin-left: -10px;
   }
 }
 
@@ -816,553 +838,553 @@ article{
     </article>
     
     <article class="color-pallets">
-    <section class="pallet-section" id="red">
-      <article>
-        <div class="color-box" id="amaranth" style="background: #e565b3">
-          <h2 class="color-title">amaranth</h2>
-          <h3 class="color-code">#e565b3<br>rgb(229, 101, 179)</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="crimson-fleet" style="background: #b72b3c">
-          <h2 class="color-title">crimson fleet</h2>
-          <p class="color-code">#b72b3c</p>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="burgundy" style="background: #722d48">
-          <h2 class="color-title">burgundy</h2>
-          <h3 class="color-code">#722d48</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="antique-ruby" style="background: #852736">
-          <h2 class="color-title">Antique Ruby</h2>
-          <h3 class="color-code">#852736</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="ruby-leaf" style="background: #8B0000">
-          <h2 class="color-title">Ruby Leaf</h2>
-          <h3 class="color-code">#8B0000</h3>
-        </div>
-      </article>
-    </section>
-    
-    <section class="pallet-section" id="orange">
-      <article>
-        <div class="color-box" id="sports-fan" style="background: #dc7d18">
-          <h2 class="color-title">sports fan</h2>
-          <h3 class="color-code">#dc7d18</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="drip-coffee" style="background: #76280c">
-          <h2 class="color-title">drip coffee</h2>
-          <h3 class="color-code">#76280c</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="alien-aurora" style="background: #d35f3f">
-          <h2 class="color-title">alien aurora</h2>
-          <h3 class="color-code">#d35f3f</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="hazelnut-kisses" style="background: #77281a">
-          <h2 class="color-title contrast-me">hazelnut kisses</h2>
-          <h3 class="color-code contrast-me">#77281a</h3>
-        </div>
-      </article>
-
-       <article>
-        <div class="color-box" id="maimi-peach" style="background: #ffb86b">
-          <h2 class="color-title">miami peach</h2>
-          <h3 class="color-code">#ffb86b</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="burnt-nectar" style="background: #c2441c">
-          <h2 class="color-title">Burnt Nectar</h2>
-          <h3 class="color-code">#c2441c</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="faded-orange" style="background: #f89254">
-          <h2 class="color-title">Faded Orange</h2>
-          <h3 class="color-code">#f89254</h3>
-        </div>
-      </article>
-    </section>
-    
-    <section class="pallet-section" id="yellow">
-      <article>
-        <div class="color-box" id="star-bright" style="background: #e9ddae">
-          <h2 class="color-title">star bright</h2>
-          <h3 class="color-code">#e9ddae<br>rgb(233, 221, 174)</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="golden-freestar" style="background: #d3a54f">
-          <h2 class="color-title">golden freestar</h2>
-          <h3 class="color-code">#d3a54f</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="mustard" style="background: #e8b444">
-          <h2 class="color-title">mustard</h2>
-          <h3 class="color-code">#e8b444</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="olden-amber" style="background: #f0b569">
-          <h2 class="color-title">olden amber</h2>
-          <h3 class="color-code">#f0b569</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="desert-sand" style="background: #e2c99e">
-          <h2 class="color-title">Desert Sand</h2>
-          <h3 class="color-code">#e2c99e</h3>
-        </div>
-      </article>
-    </section>
-    
-    <section class="pallet-section" id="green">
-      <article>
-        <div class="color-box" id="liberty-green" style="background: #1bab51">
-          <h2 class="color-title">liberty gree</h2>
-          <h3 class="color-code">#1bab51<br>rgb(27, 171, 81)</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="green-day" style="background: #b1f489">
-          <h2 class="color-title">green day</h2>
-          <h3 class="color-code">#b1f489</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="silver-greene" style="background: #d5dad7">
-          <h2 class="color-title">silver green</h2>
-          <h3 class="color-code">#d5dad7</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="lima-green" style="background: #b1ba86">
-          <h2 class="color-title">lima-green</h2>
-          <h3 class="color-code">#b1ba86</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="shy-green" style="background: #e6e9db">
-          <h2 class="color-title contrast-me">shy green</h2>
-          <h3 class="color-code contrast-me">#e6e9db</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="aquamarine" style="background: #2fdfb3">
-          <h2 class="color-title contrast-me">aquamarine</h2>
-          <h3 class="color-code contrast-me">#2fdfb3</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="zucchini" style="background: #134234">
-          <h2 class="color-title contrast-me">zucchini</h2>
-          <h3 class="color-code contrast-me">#134234</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="neon-lime" style="background: #aaff00">
-          <h2 class="color-title contrast-me">neon lime</h2>
-          <h3 class="color-code contrast-me">#aaff00</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="moss-shadow" style="background: #274E13">
-          <h2 class="color-title">Moss Shadow</h2>
-          <h3 class="color-code">#aa542b</h3>
-        </div>
-      </article>
+      <section class="pallet-section" id="red">
+        <article>
+          <div class="color-box" id="amaranth" style="background: #e565b3">
+            <h2 class="color-title">amaranth</h2>
+            <h3 class="color-code">#e565b3<br>rgb(229, 101, 179)</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="crimson-fleet" style="background: #b72b3c">
+            <h2 class="color-title">crimson fleet</h2>
+            <p class="color-code">#b72b3c</p>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="burgundy" style="background: #722d48">
+            <h2 class="color-title">burgundy</h2>
+            <h3 class="color-code">#722d48</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="antique-ruby" style="background: #852736">
+            <h2 class="color-title">Antique Ruby</h2>
+            <h3 class="color-code">#852736</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="ruby-leaf" style="background: #8B0000">
+            <h2 class="color-title">Ruby Leaf</h2>
+            <h3 class="color-code">#8B0000</h3>
+          </div>
+        </article>
+      </section>
       
-      <article>
-        <div class="color-box" id="asparagus" style="background: #8da249">
-          <h2 class="color-title">Asparagus</h2>
-          <h3 class="color-code">#8da249</h3>
-        </div>
-      </article>
-
-    </section>
-    
-    <section class="pallet-section" id="blue">
-      <article>
-        <div class="color-box" id="palatinate-blue" style="background: #2233e6">
-          <h2 class="color-title">palatinate blue</h2>
-          <h3 class="color-code">#2233e6<br>rgb(34, 51, 230)</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="neon-blue" style="background: #0ae2fb">
-          <h2 class="color-title">neon blue</h2>
-          <h3 class="color-code">#0ae2fb</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="cool-balaclavas-are-forever" style="background: #1a233e">
-          <h2 class="color-title">cool balaclavas are forever</h2>
-          <h3 class="color-code">#1a233e</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="deep-vanguard" style="background: #1f2c41">
-          <h2 class="color-title">deep vanguard</h2>
-          <h3 class="color-code">#1f2c41</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="blue-constellation" style="background: #334a73">
-          <h2 class="color-title">blue constellation</h2>
-          <h3 class="color-code">#334a73</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="navy" style="background: #28376a">
-          <h2 class="color-title">Navy</h2>
-          <h3 class="color-code">#28376a</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="mint" style="background: #8fcec0">
-          <h2 class="color-title">mint</h2>
-          <h3 class="color-code">#8fcec0</h3>
-        </div>
-      </article>
-
-       <article>
-        <div class="color-box" id="neon-cyan" style="background: #00f5ff">
-          <h2 class="color-title">neon cyan</h2>
-          <h3 class="color-code">#00f5ff</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="vice-cyan" style ="background: #00f0ff">
-          <h2 class="color-title">vice cyan</h2>
-          <h3 class="color-code">#00f0ff</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="dark-cyan" style="background: #008B8B">
-          <h2 class="color-title">dark cyan</h2>
-          <h3 class="color-code">#008B8B</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="chinese-blue" style="background: #414b9e">
-          <h2 class="color-title">Chinese Blue</h2>
-          <h3 class="color-code">#414b9e</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="indigo-rain" style="background: #0d244d">
-          <h2 class="color-title">Indigo Rain</h2>
-          <h3 class="color-code">#od244d</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="limed-spruce" style="background: #2e434f">
-          <h2 class="color-title">Limed Spruce</h2>
-          <h3 class="color-code">#2e434f</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="light-luna" style="background: #a7ebf2">
-          <h2 class="color-title contrast-me">Light Luna</h2>
-          <h3 class="color-code contrast-me">#a7ebf2</h3>
-        </div>
-      </article>
-      <article>
-        <div class="color-box" id="lite-luna" style="background: #54acbf">
-          <h2 class="color-title">Light Luna</h2>
-          <h3 class="color-code">#54acbf</h3>
-        </div>
-      </article>
-      <article>
-        <div class="color-box" id="medium-luna" style="background: #26658c">
-          <h2 class="color-title">Medium Luna</h2>
-          <h3 class="color-code">#26658c</h3>
-        </div>
-      </article>
-      <article>
-        <div class="color-box" id="dark-luna" style="background: #023859">
-          <h2 class="color-title">Dark Luna</h2>
-          <h3 class="color-code">#023859</h3>
-        </div>
-      </article>
-      <article>
-        <div class="color-box" id="navy-luna" style="background: #011c40">
-          <h2 class="color-title">Navy Luna</h2>
-          <h3 class="color-code">#011c40</h3>
-        </div>
-      </article>
-      <article>
-        <div class="color-box" id="regent-blue" style="background: #aad6e6">
-          <h2 class="color-title contrast-me">Regent Blue</h2>
-          <h3 class="color-code contrast-me">#aad6e6</h3>
-        </div>
-      </article>
-
-
-    </section>
-    
-    <section class="pallet-section" id="purple">
-      <article>
-        <div class="color-box" id="amarklor-violet" style="background: #5f149c">
-          <h2 class="color-title">amarklor violet</h2>
-          <h3 class="color-code">#5f149c</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="french-violet" style="background: #880eca">
-          <h2 class="color-title">alien aurora</h2>
-          <h3 class="color-code">#880eca</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="puturple" style="background: #afa1ce">
-          <h2 class="color-title">puturple</h2>
-          <h3 class="color-code">#afa1ce</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="viking-diva" style="background: #c9bce1">
-          <h2 class="color-title">viking diva</h2>
-          <h3 class="color-code">#c9bce1</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="electric-purple" style="background: #9b5cff">
-          <h2 class="color-title">electric purple</h2>
-          <h3 class="color-code">#9b5cff</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="neon-purple" style="background: #8c6cff">
-          <h2 class="color-title">Neon purple</h2>
-          <h3 class="color-code">#8c6cff</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="midnight-violet" style="background: #2b193d">
-          <h2 class="color-title">midnight violet</h2>
-          <h3 class="color-code">#2b193d</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="twilight-indigo" style="background: #2c365e">
-          <h2 class="color-title">twilight indigo</h2>
-          <h3 class="color-code">#2c365e</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="ceil" style="background: #9792cb">
-          <h2 class="color-title">Ceil</h2>
-          <h3 class="color-code">#9792cb</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="dusty-grape" style="background: #484d6d">
-          <h2 class="color-title">dusty grape</h2>
-          <h3 class="color-code">#484d6d</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="pearly-purple" style="background: #aa74a0">
-          <h2 class="color-title">Pearly Purple</h2>
-          <h3 class="color-code">#aa74a0</h3>
-        </div>
-      </article>
-    </section>
-    
-    <section class="pallet-section" id="pink">
-      <article>
-        <div class="color-box" id="adventure-island-pink" style="background: #f47b55">
-          <h2 class="color-title">adventure island pink</h2>
-          <h3 class="color-code">#f47b55</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="pink-charge" style="background: #d66cb9">
-          <h2 class="color-title contrast-me">Pink Charge</h2>
-          <h3 class="color-code contrast-me">#d66cb9</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="magnetos-magenta" style="background: #B01998">
-          <h2 class="color-title contrast-me">Magneto's Magente</h2>
-          <h3 class="color-code contrast-me">#b01998</h3>
-        </div>
-      </article>
-
-       <article>
-        <div class="color-box" id="sunset-pink" style="background: #ff5cab">
-          <h2 class="color-title">Sunset Pink</h2>
-          <h3 class="color-code">#ff5cab</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="rosy-taupe" style="background: #c5979d">
-          <h2 class="color-title">Rosy Taupe</h2>
-          <h3 class="color-code">#c5979d</h3>
-        </div>
-      </article>
-    </section>
-    
-    <section class="pallet-section" id="black">
-      <article>
-        <div class="color-box" id="midnight-moss" style="background: #262c28">
-          <h2 class="color-title">midnight moss</h2>
-          <h3 class="color-code">#262c28<br>rgb(38, 44, 40)</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="scandinavian-liquorice" style="background: #1a0e11">
-          <h2 class="color-title">scandinavian liquorice</h2>
-          <h3 class="color-code">#1a0e11</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="poppy-pods" style="background: #766058">
-          <h2 class="color-title">poppy pods</h2>
-          <h3 class="color-code">#766058</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="extravagance" style="background: #4f484f">
-          <h2 class="color-title">extravagance</h2>
-          <h3 class="color-code">#4f484f</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="shiny-rubber" style="background: #3d3539">
-          <h2 class="color-title">shiny rubber</h2>
-          <h3 class="color-code">#3d3539</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="kurobeni" style="background: #241b1c">
-          <h2 class="color-title">kurobeni</h2>
-          <h3 class="color-code">#241b1c</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="dark-graphite" style="background: #141414">
-          <h2 class="color-title">dark graphite</h2>
-          <h3 class="color-code">#141414</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="void" style="background: #000000">
-          <h2 class="color-title">void</h2>
-          <h3 class="color-code">#000000</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="ocean-night" style="background: #0b0f2b">
-          <h2 class="color-title">Ocean night</h2>
-          <h3 class="color-code">#0b0f2b</h3>
-        </div>
-      </article>
-    </section>
-    
-    <section class="pallet-section" id="white">
-      <article>
-        <div class="color-box" id="twany-tan" style="background: #cdb397">
-          <h2 class="color-title">twany tan</h2>
-          <h3 class="color-code">#cdb397</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="browse-brown" style="background: #6d605e">
-          <h2 class="color-title">browse brown</h2>
-          <h3 class="color-code">#6d605e</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="white-owl" style="background: #f4f3f7">
-          <h2 class="color-title contrast-me">white owl</h2>
-          <h3 class="color-code contrast-me">#f4f3f7</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="peach" style="background: #f5c9af">
-          <h2 class="color-title">Peach</h2>
-          <h3 class="color-code">#f5c9af</h3>
-        </div>
-      </article>
-
-      <article>
-        <div class="color-box" id="navajo-white" style="background: #fbe1b5">
-          <h2 class="color-title contrast-me">Navajo White</h2>
-          <h3 class="color-code contrast-me">#fbe1b5</h3>
-        </div>
-      </article>
-    </section>
+      <section class="pallet-section" id="orange">
+        <article>
+          <div class="color-box" id="sports-fan" style="background: #dc7d18">
+            <h2 class="color-title">sports fan</h2>
+            <h3 class="color-code">#dc7d18</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="drip-coffee" style="background: #76280c">
+            <h2 class="color-title">drip coffee</h2>
+            <h3 class="color-code">#76280c</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="alien-aurora" style="background: #d35f3f">
+            <h2 class="color-title">alien aurora</h2>
+            <h3 class="color-code">#d35f3f</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="hazelnut-kisses" style="background: #77281a">
+            <h2 class="color-title contrast-me">hazelnut kisses</h2>
+            <h3 class="color-code contrast-me">#77281a</h3>
+          </div>
+        </article>
+  
+         <article>
+          <div class="color-box" id="maimi-peach" style="background: #ffb86b">
+            <h2 class="color-title">miami peach</h2>
+            <h3 class="color-code">#ffb86b</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="burnt-nectar" style="background: #c2441c">
+            <h2 class="color-title">Burnt Nectar</h2>
+            <h3 class="color-code">#c2441c</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="faded-orange" style="background: #f89254">
+            <h2 class="color-title">Faded Orange</h2>
+            <h3 class="color-code">#f89254</h3>
+          </div>
+        </article>
+      </section>
+      
+      <section class="pallet-section" id="yellow">
+        <article>
+          <div class="color-box" id="star-bright" style="background: #e9ddae">
+            <h2 class="color-title">star bright</h2>
+            <h3 class="color-code">#e9ddae<br>rgb(233, 221, 174)</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="golden-freestar" style="background: #d3a54f">
+            <h2 class="color-title">golden freestar</h2>
+            <h3 class="color-code">#d3a54f</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="mustard" style="background: #e8b444">
+            <h2 class="color-title">mustard</h2>
+            <h3 class="color-code">#e8b444</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="olden-amber" style="background: #f0b569">
+            <h2 class="color-title">olden amber</h2>
+            <h3 class="color-code">#f0b569</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="desert-sand" style="background: #e2c99e">
+            <h2 class="color-title">Desert Sand</h2>
+            <h3 class="color-code">#e2c99e</h3>
+          </div>
+        </article>
+      </section>
+      
+      <section class="pallet-section" id="green">
+        <article>
+          <div class="color-box" id="liberty-green" style="background: #1bab51">
+            <h2 class="color-title">liberty gree</h2>
+            <h3 class="color-code">#1bab51<br>rgb(27, 171, 81)</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="green-day" style="background: #b1f489">
+            <h2 class="color-title">green day</h2>
+            <h3 class="color-code">#b1f489</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="silver-greene" style="background: #d5dad7">
+            <h2 class="color-title">silver green</h2>
+            <h3 class="color-code">#d5dad7</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="lima-green" style="background: #b1ba86">
+            <h2 class="color-title">lima-green</h2>
+            <h3 class="color-code">#b1ba86</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="shy-green" style="background: #e6e9db">
+            <h2 class="color-title contrast-me">shy green</h2>
+            <h3 class="color-code contrast-me">#e6e9db</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="aquamarine" style="background: #2fdfb3">
+            <h2 class="color-title contrast-me">aquamarine</h2>
+            <h3 class="color-code contrast-me">#2fdfb3</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="zucchini" style="background: #134234">
+            <h2 class="color-title contrast-me">zucchini</h2>
+            <h3 class="color-code contrast-me">#134234</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="neon-lime" style="background: #aaff00">
+            <h2 class="color-title contrast-me">neon lime</h2>
+            <h3 class="color-code contrast-me">#aaff00</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="moss-shadow" style="background: #274E13">
+            <h2 class="color-title">Moss Shadow</h2>
+            <h3 class="color-code">#aa542b</h3>
+          </div>
+        </article>
+        
+        <article>
+          <div class="color-box" id="asparagus" style="background: #8da249">
+            <h2 class="color-title">Asparagus</h2>
+            <h3 class="color-code">#8da249</h3>
+          </div>
+        </article>
+  
+      </section>
+      
+      <section class="pallet-section" id="blue">
+        <article>
+          <div class="color-box" id="palatinate-blue" style="background: #2233e6">
+            <h2 class="color-title">palatinate blue</h2>
+            <h3 class="color-code">#2233e6<br>rgb(34, 51, 230)</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="neon-blue" style="background: #0ae2fb">
+            <h2 class="color-title">neon blue</h2>
+            <h3 class="color-code">#0ae2fb</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="cool-balaclavas-are-forever" style="background: #1a233e">
+            <h2 class="color-title">cool balaclavas are forever</h2>
+            <h3 class="color-code">#1a233e</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="deep-vanguard" style="background: #1f2c41">
+            <h2 class="color-title">deep vanguard</h2>
+            <h3 class="color-code">#1f2c41</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="blue-constellation" style="background: #334a73">
+            <h2 class="color-title">blue constellation</h2>
+            <h3 class="color-code">#334a73</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="navy" style="background: #28376a">
+            <h2 class="color-title">Navy</h2>
+            <h3 class="color-code">#28376a</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="mint" style="background: #8fcec0">
+            <h2 class="color-title">mint</h2>
+            <h3 class="color-code">#8fcec0</h3>
+          </div>
+        </article>
+  
+         <article>
+          <div class="color-box" id="neon-cyan" style="background: #00f5ff">
+            <h2 class="color-title">neon cyan</h2>
+            <h3 class="color-code">#00f5ff</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="vice-cyan" style ="background: #00f0ff">
+            <h2 class="color-title">vice cyan</h2>
+            <h3 class="color-code">#00f0ff</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="dark-cyan" style="background: #008B8B">
+            <h2 class="color-title">dark cyan</h2>
+            <h3 class="color-code">#008B8B</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="chinese-blue" style="background: #414b9e">
+            <h2 class="color-title">Chinese Blue</h2>
+            <h3 class="color-code">#414b9e</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="indigo-rain" style="background: #0d244d">
+            <h2 class="color-title">Indigo Rain</h2>
+            <h3 class="color-code">#od244d</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="limed-spruce" style="background: #2e434f">
+            <h2 class="color-title">Limed Spruce</h2>
+            <h3 class="color-code">#2e434f</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="light-luna" style="background: #a7ebf2">
+            <h2 class="color-title contrast-me">Light Luna</h2>
+            <h3 class="color-code contrast-me">#a7ebf2</h3>
+          </div>
+        </article>
+        <article>
+          <div class="color-box" id="lite-luna" style="background: #54acbf">
+            <h2 class="color-title">Light Luna</h2>
+            <h3 class="color-code">#54acbf</h3>
+          </div>
+        </article>
+        <article>
+          <div class="color-box" id="medium-luna" style="background: #26658c">
+            <h2 class="color-title">Medium Luna</h2>
+            <h3 class="color-code">#26658c</h3>
+          </div>
+        </article>
+        <article>
+          <div class="color-box" id="dark-luna" style="background: #023859">
+            <h2 class="color-title">Dark Luna</h2>
+            <h3 class="color-code">#023859</h3>
+          </div>
+        </article>
+        <article>
+          <div class="color-box" id="navy-luna" style="background: #011c40">
+            <h2 class="color-title">Navy Luna</h2>
+            <h3 class="color-code">#011c40</h3>
+          </div>
+        </article>
+        <article>
+          <div class="color-box" id="regent-blue" style="background: #aad6e6">
+            <h2 class="color-title contrast-me">Regent Blue</h2>
+            <h3 class="color-code contrast-me">#aad6e6</h3>
+          </div>
+        </article>
+  
+  
+      </section>
+      
+      <section class="pallet-section" id="purple">
+        <article>
+          <div class="color-box" id="amarklor-violet" style="background: #5f149c">
+            <h2 class="color-title">amarklor violet</h2>
+            <h3 class="color-code">#5f149c</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="french-violet" style="background: #880eca">
+            <h2 class="color-title">alien aurora</h2>
+            <h3 class="color-code">#880eca</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="puturple" style="background: #afa1ce">
+            <h2 class="color-title">puturple</h2>
+            <h3 class="color-code">#afa1ce</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="viking-diva" style="background: #c9bce1">
+            <h2 class="color-title">viking diva</h2>
+            <h3 class="color-code">#c9bce1</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="electric-purple" style="background: #9b5cff">
+            <h2 class="color-title">electric purple</h2>
+            <h3 class="color-code">#9b5cff</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="neon-purple" style="background: #8c6cff">
+            <h2 class="color-title">Neon purple</h2>
+            <h3 class="color-code">#8c6cff</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="midnight-violet" style="background: #2b193d">
+            <h2 class="color-title">midnight violet</h2>
+            <h3 class="color-code">#2b193d</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="twilight-indigo" style="background: #2c365e">
+            <h2 class="color-title">twilight indigo</h2>
+            <h3 class="color-code">#2c365e</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="ceil" style="background: #9792cb">
+            <h2 class="color-title">Ceil</h2>
+            <h3 class="color-code">#9792cb</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="dusty-grape" style="background: #484d6d">
+            <h2 class="color-title">dusty grape</h2>
+            <h3 class="color-code">#484d6d</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="pearly-purple" style="background: #aa74a0">
+            <h2 class="color-title">Pearly Purple</h2>
+            <h3 class="color-code">#aa74a0</h3>
+          </div>
+        </article>
+      </section>
+      
+      <section class="pallet-section" id="pink">
+        <article>
+          <div class="color-box" id="adventure-island-pink" style="background: #f47b55">
+            <h2 class="color-title">adventure island pink</h2>
+            <h3 class="color-code">#f47b55</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="pink-charge" style="background: #d66cb9">
+            <h2 class="color-title contrast-me">Pink Charge</h2>
+            <h3 class="color-code contrast-me">#d66cb9</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="magnetos-magenta" style="background: #B01998">
+            <h2 class="color-title contrast-me">Magneto's Magente</h2>
+            <h3 class="color-code contrast-me">#b01998</h3>
+          </div>
+        </article>
+  
+         <article>
+          <div class="color-box" id="sunset-pink" style="background: #ff5cab">
+            <h2 class="color-title">Sunset Pink</h2>
+            <h3 class="color-code">#ff5cab</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="rosy-taupe" style="background: #c5979d">
+            <h2 class="color-title">Rosy Taupe</h2>
+            <h3 class="color-code">#c5979d</h3>
+          </div>
+        </article>
+      </section>
+      
+      <section class="pallet-section" id="black">
+        <article>
+          <div class="color-box" id="midnight-moss" style="background: #262c28">
+            <h2 class="color-title">midnight moss</h2>
+            <h3 class="color-code">#262c28<br>rgb(38, 44, 40)</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="scandinavian-liquorice" style="background: #1a0e11">
+            <h2 class="color-title">scandinavian liquorice</h2>
+            <h3 class="color-code">#1a0e11</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="poppy-pods" style="background: #766058">
+            <h2 class="color-title">poppy pods</h2>
+            <h3 class="color-code">#766058</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="extravagance" style="background: #4f484f">
+            <h2 class="color-title">extravagance</h2>
+            <h3 class="color-code">#4f484f</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="shiny-rubber" style="background: #3d3539">
+            <h2 class="color-title">shiny rubber</h2>
+            <h3 class="color-code">#3d3539</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="kurobeni" style="background: #241b1c">
+            <h2 class="color-title">kurobeni</h2>
+            <h3 class="color-code">#241b1c</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="dark-graphite" style="background: #141414">
+            <h2 class="color-title">dark graphite</h2>
+            <h3 class="color-code">#141414</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="void" style="background: #000000">
+            <h2 class="color-title">void</h2>
+            <h3 class="color-code">#000000</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="ocean-night" style="background: #0b0f2b">
+            <h2 class="color-title">Ocean night</h2>
+            <h3 class="color-code">#0b0f2b</h3>
+          </div>
+        </article>
+      </section>
+      
+      <section class="pallet-section" id="white">
+        <article>
+          <div class="color-box" id="twany-tan" style="background: #cdb397">
+            <h2 class="color-title">twany tan</h2>
+            <h3 class="color-code">#cdb397</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="browse-brown" style="background: #6d605e">
+            <h2 class="color-title">browse brown</h2>
+            <h3 class="color-code">#6d605e</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="white-owl" style="background: #f4f3f7">
+            <h2 class="color-title contrast-me">white owl</h2>
+            <h3 class="color-code contrast-me">#f4f3f7</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="peach" style="background: #f5c9af">
+            <h2 class="color-title">Peach</h2>
+            <h3 class="color-code">#f5c9af</h3>
+          </div>
+        </article>
+  
+        <article>
+          <div class="color-box" id="navajo-white" style="background: #fbe1b5">
+            <h2 class="color-title contrast-me">Navajo White</h2>
+            <h3 class="color-code contrast-me">#fbe1b5</h3>
+          </div>
+        </article>
+      </section>
     </article>
     
     <button id="scrollToTopBtn" aria-label="Scroll to navbar">
