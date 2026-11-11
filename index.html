@@ -760,64 +760,70 @@ article{
   
   <main class="pallet-main">
     <article class="color-pallette-converter">
-      <!-- Palette Generator Section -->
-    <section>
-      <div class="controls-bar">
-        <h2>Palette Generator</h2>
-        <button class="btn" id="generate-btn">
-          <i data-lucide="refresh-cw"></i> Generate (Space)
-        </button>
-      </div>
-
-      <div class="palette-grid" id="palette-grid" style="margin-top: 1rem;">
-        <!-- Swatches rendered via JavaScript -->
-      </div>
-    </section>
-
-    <!-- Converter Section -->
-    <section class="converter-card">
-      <h2>Color Code Converter</h2>
-      
-      <div class="converter-grid">
-        <div>
-          <!-- HEX to RGB -->
-          <div class="input-group" style="margin-bottom: 1.5rem;">
-            <label for="hex-input">HEX Code</label>
-            <div class="input-wrapper">
-              <input type="text" id="hex-input" placeholder="#3B82F6" maxlength="7">
+        <!-- Palette Generator Section -->
+      <section>
+        <div class="controls-bar">
+          <h2>Palette Generator</h2>
+          <button class="btn" id="generate-btn">
+            <i data-lucide="refresh-cw"></i> Generate (Space)
+          </button>
+        </div>
+  
+        <div class="palette-grid" id="palette-grid" style="margin-top: 1rem;">
+          <!-- Swatches rendered via JavaScript -->
+        </div>
+      </section>
+  
+      <!-- Converter Section -->
+      <section class="converter-card">
+        <h2>Color Code Converter</h2>
+        
+        <div class="converter-grid">
+          <div>
+            <!-- HEX to RGB -->
+            <div class="input-group" style="margin-bottom: 1.5rem;">
+              <label for="hex-input">HEX Code</label>
+              <div class="input-wrapper">
+                <input type="text" id="hex-input" placeholder="#3B82F6" maxlength="7">
+              </div>
+              <div class="error-msg" id="hex-error"></div>
             </div>
-            <div class="error-msg" id="hex-error"></div>
+  
+            <!-- RGB to HEX -->
+            <div class="input-group">
+              <label for="rgb-input">RGB Code</label>
+              <div class="input-wrapper">
+                <input type="text" id="rgb-input" placeholder="rgb(59, 130, 246)">
+              </div>
+              <div class="error-msg" id="rgb-error"></div>
+            </div>
           </div>
-
-          <!-- RGB to HEX -->
+  
+          <!-- Live Preview Box -->
           <div class="input-group">
-            <label for="rgb-input">RGB Code</label>
-            <div class="input-wrapper">
-              <input type="text" id="rgb-input" placeholder="rgb(59, 130, 246)">
+            <label>Live Preview</label>
+            <div class="preview-box" id="converter-preview">
+              <span id="preview-text">#3B82F6</span>
             </div>
-            <div class="error-msg" id="rgb-error"></div>
           </div>
         </div>
-
-        <!-- Live Preview Box -->
-        <div class="input-group">
-          <label>Live Preview</label>
-          <div class="preview-box" id="converter-preview">
-            <span id="preview-text">#3B82F6</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- Toast Element -->
-  <div class="toast" id="toast">Copied to clipboard!</div>
-
+      </section>
+  
+    </div>
+  
+    <!-- Toast Element -->
+    <div class="toast" id="toast">Copied to clipboard!</div>
     </article>
     
     <article class="color-pallets">
-      <section class="pallet-section" id="red">
+    <section class="pallet-section" id="red">
+      <article>
+        <div class="color-box" id="amaranth" style="background: #e565b3">
+          <h2 class="color-title">amaranth</h2>
+          <h3 class="color-code">#e565b3<br>rgb(229, 101, 179)</h3>
+        </div>
+      </article>
+
       <article>
         <div class="color-box" id="crimson-fleet" style="background: #b72b3c">
           <h2 class="color-title">crimson fleet</h2>
@@ -900,6 +906,13 @@ article{
     
     <section class="pallet-section" id="yellow">
       <article>
+        <div class="color-box" id="star-bright" style="background: #e9ddae">
+          <h2 class="color-title">star bright</h2>
+          <h3 class="color-code">#e9ddae<br>rgb(233, 221, 174)</h3>
+        </div>
+      </article>
+
+      <article>
         <div class="color-box" id="golden-freestar" style="background: #d3a54f">
           <h2 class="color-title">golden freestar</h2>
           <h3 class="color-code">#d3a54f</h3>
@@ -929,6 +942,13 @@ article{
     </section>
     
     <section class="pallet-section" id="green">
+      <article>
+        <div class="color-box" id="liberty-green" style="background: #1bab51">
+          <h2 class="color-title">liberty gree</h2>
+          <h3 class="color-code">#1bab51<br>rgb(27, 171, 81)</h3>
+        </div>
+      </article>
+
       <article>
         <div class="color-box" id="green-day" style="background: #b1f489">
           <h2 class="color-title">green day</h2>
@@ -995,6 +1015,13 @@ article{
     </section>
     
     <section class="pallet-section" id="blue">
+      <article>
+        <div class="color-box" id="palatinate-blue" style="background: #2233e6">
+          <h2 class="color-title">palatinate blue</h2>
+          <h3 class="color-code">#2233e6<br>rgb(34, 51, 230)</h3>
+        </div>
+      </article>
+
       <article>
         <div class="color-box" id="neon-blue" style="background: #0ae2fb">
           <h2 class="color-title">neon blue</h2>
@@ -1237,6 +1264,13 @@ article{
     
     <section class="pallet-section" id="black">
       <article>
+        <div class="color-box" id="midnight-moss" style="background: #262c28">
+          <h2 class="color-title">midnight moss</h2>
+          <h3 class="color-code">#262c28<br>rgb(38, 44, 40)</h3>
+        </div>
+      </article>
+
+      <article>
         <div class="color-box" id="scandinavian-liquorice" style="background: #1a0e11">
           <h2 class="color-title">scandinavian liquorice</h2>
           <h3 class="color-code">#1a0e11</h3>
@@ -1329,14 +1363,13 @@ article{
         </div>
       </article>
     </section>
-
     </article>
     
     <button id="scrollToTopBtn" aria-label="Scroll to navbar">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="m18 15-6-6-6 6"/>
-  </svg>
-</button>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m18 15-6-6-6 6"/>
+      </svg>
+    </button>
 
   </main>
   
